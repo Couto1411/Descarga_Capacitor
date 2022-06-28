@@ -1,0 +1,66 @@
+html{
+    font-size: 32px;
+    background-color: silver;
+}
+
+.fonte{margin: 0; padding: 0;}
+.fonteimg{width: 4em;}
+.fonte .vertical-line{height: 2em; width:2.16em;}
+
+.capacitor-circuit{margin-left: -0.9em;}
+.capacitor{
+    margin-left: -0.2em;
+    width: 2em;
+    height: 1em;
+    border-top: 0.4em solid black;
+    border-bottom: 0.4em solid black;
+}
+.chave{
+    border-right: 0.4em solid black;
+    border-bottom: 0.4em solid black;
+    transform: rotate(45deg);
+    width: 2em;
+    height: 2em;
+    margin-top: -1em;
+    margin-bottom: 0.1em;
+    margin-left: -0.2em;
+}
+.chave:hover{
+    cursor: pointer;
+}
+.capacitor-circuit .vertical-line{height: 8.35em; width:1em;}
+
+.resistor-circuit{
+    margin-left: -2em;
+}
+.resistor-circuit .vertical-line{height: 2em; width:54%;}
+.resistor-circuit .resistor-top,.resistor-bottom{
+    background-color: rgb(229,216,194);
+    width: 3em;
+    height: 1.5em;
+    border-radius: 0.3em;
+}
+.resistor-circuit .resistor-body{
+    background-color: rgb(229,216,194);
+    width: 1.5em;
+}
+.resistor-circuit .resistor-body>*{
+    padding: 0.1em;
+    height: 1em;
+}
+
+.vertical-line{border-right: 0.4em solid black;}
+.horizontal-line{
+    border-top: 0.4em solid black;
+    width: 9em;
+}
+td:nth-child(1) .horizontal-line{margin-left: 1.77em;}
+table {border-collapse: collapse;}
+table td {
+    padding: 0; 
+    margin: 0;
+}
+table trtd div{
+    padding: 0; 
+    margin: 0;
+}
