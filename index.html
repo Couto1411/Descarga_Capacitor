@@ -7,15 +7,15 @@
     <link href="assets/style.css" type="text/css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
+    <script src="js/script.js"></script>
     <title>Carga de um capacitor</title>
 </head>
-<body>
-    <div>
-        <table>
+<body onload="hide()">
+    <div class="d-flex justify-content-center">
+        <table class="circuits">
             <tr>
-                <td><div class="horizontal-line" style="width:7.8em"></div></td>
-                <td><div class="horizontal-line" style="margin-left: 1em;width:8em"></div></td>
+                <td><div class="horizontal-line" style="width:7.8em;margin-bottom:-0.1em"></div></td>
+                <td><div class="horizontal-line" style="margin-left: 1em;width:8em; margin-bottom:-0.1em"></div></td>
             </tr>
             <tr>
                 <td>
@@ -28,25 +28,25 @@
                 <td>
                     <div class="capacitor-circuit">
                         <div class="chave"></div>
-                        <div class="vertical-line" style="height: 7.3em;"></div>
+                        <div class="vertical-line" style="height: 7.3em;width:1em;"></div>
                         <div class="capacitor"></div>
-                        <div class="vertical-line"></div>
+                        <div class="vertical-line" style="height: 8.35em;width:1em;"></div>
                     </div>
                 </td>
                 <td>
                     <div class="resistor-circuit">
-                        <div class="vertical-line" style="height: 5.35em;"></div>
+                        <div class="vertical-line" style="height: 5em;"></div>
                         <div class="resistor-top"></div>
                         <div class="d-flex justify-content-center"><div class="resistor-body">
-                            <div id="brand1"></div>
-                            <div id="brand2"></div>
-                            <div id="brand3"></div>
-                            <div id="brand4"></div>
+                            <div id="brand1" onclick="brand1()" onchange="resistTot()"></div>
+                            <div id="brand2" onclick="brand2()" onchange="resistTot()"></div>
+                            <div id="brand3" onclick="brand3()" onchange="resistTot()"></div>
+                            <div style="border: transparent;"></div>
+                            <div id="brand5" onclick="brand5()" onchange="resistTot()"></div>
                         </div></div>
                         <div class="resistor-bottom"></div>
-                        <div class="vertical-line" style="height: 5.4em;"></div>
+                        <div class="vertical-line" style="height: 4.75em;"></div>
                     </div>
-
                 </td>
             </tr>
             <tr>
@@ -54,6 +54,60 @@
                 <td><div class="horizontal-line"></div></td>
             </tr>
         </table>
+        <div class="tabela-resistores">
+            <table id="resistor-table1">
+                <tr><td class="black" onclick="faixa1P()"><span>0 Preto</span></td></tr>
+                <tr><td class="brown" onclick="faixa1M()">1 Marrom</td></tr>
+                <tr><td class="red" onclick="faixa1Vm()">2 Vermelho</td></tr>
+                <tr><td class="orange" onclick="faixa1L()">3 Laranja</td></tr>
+                <tr><td class="yellow" onclick="faixa1Am()">4 Amarelo</td></tr>
+                <tr><td class="green" onclick="faixa1Vd()">5 Verde</td></tr>
+                <tr><td class="blue" onclick="faixa1Az()">6 Azul</td></tr>
+                <tr><td class="violet" onclick="faixa1Vi()">7 Violeta</td></tr>
+                <tr><td class="gray" onclick="faixa1C()">8 Cinza</td></tr>
+                <tr><td class="white" onclick="faixa1B()">9 Branco</td></tr>
+            </table>
+            <table id="resistor-table2">
+                <tr><td class="black" onclick="faixa2P()"><span>0 Preto</span></td></tr>
+                <tr><td class="brown" onclick="faixa2M()">1 Marrom</td></tr>
+                <tr><td class="red" onclick="faixa2Vm()">2 Vermelho</td></tr>
+                <tr><td class="orange" onclick="faixa2L()">3 Laranja</td></tr>
+                <tr><td class="yellow" onclick="faixa2Am()">4 Amarelo</td></tr>
+                <tr><td class="green" onclick="faixa2Vd()">5 Verde</td></tr>
+                <tr><td class="blue" onclick="faixa2Az()">6 Azul</td></tr>
+                <tr><td class="violet" onclick="faixa2Vi()">7 Violeta</td></tr>
+                <tr><td class="gray" onclick="faixa2C()">8 Cinza</td></tr>
+                <tr><td class="white" onclick="faixa2B()">9 Branco</td></tr>
+            </table>
+            <table id="resistor-table3">
+                <tr><td class="black" onclick="faixa3P()"> <span>1 Ω</span></td></tr>
+                <tr><td class="brown" onclick="faixa3M()">10 Ω</td></tr>
+                <tr><td class="red" onclick="faixa3Vm()">100 Ω</td></tr>
+                <tr><td class="orange" onclick="faixa3L()">1K Ω</td></tr>
+                <tr><td class="yellow" onclick="faixa3Am()">10K Ω</td></tr>
+                <tr><td class="green" onclick="faixa3Vd()">100K Ω</td></tr>
+                <tr><td class="blue" onclick="faixa3Az()">1M Ω</td></tr>
+                <tr><td class="violet" onclick="faixa3Vi()">10M Ω</td></tr>
+                <tr><td class="gray" onclick="faixa3C()">100M Ω</td></tr>
+                <tr><td class="white" onclick="faixa3B()">1G Ω</td></tr>
+                <tr><td class="gold" onclick="faixa3G()">0.1 Ω</td></tr>
+                <tr><td class="silver" onclick="faixa3S()">0.01 Ω</td></tr>
+            </table>
+            <table id="resistor-table4">
+                <tr><td class="brown" onclick="faixa5M()">1%</td></tr>
+                <tr><td class="red" onclick="faixa5Vm()">2%</td></tr>
+                <tr><td class="green" onclick="faixa5Vd()">0.5%</td></tr>
+                <tr><td class="blue" onclick="faixa5Az()">0.25%</td></tr>
+                <tr><td class="violet" onclick="faixa5Vi()">0.1%</td></tr>
+                <tr><td class="gray" onclick="faixa5C()">0.05%</td></tr>
+                <tr><td class="gold" onclick="faixa5G()">5%</td></tr>
+                <tr><td class="silver" onclick="faixa5S()">0.01%</td></tr>
+            </table>
+        </div>
+    </div>
+    <div class="valores bg-secondary ">
+        Resistência: 
+        <div id="resist-tot"></div>
     </div>
 </body>
 
