@@ -45,7 +45,14 @@
                     <div class="capacitor-circuit">
                         <div class="chave"></div>
                         <div class="vertical-line" style="height: 7.3em;width:1em;"></div>
-                        <div class="capacitor"></div>
+                        <div class="capacitor" onclick="cliqueCapacitor()">
+                            <div id="form-capacitor">
+                                <form action="" class="form-capacitor">
+                                    <input type="number" id="input-capacitor" class="input-capa" style="width: 110px;"
+                                    onchange="capacitor()">
+                                </form>
+                            </div>
+                        </div>
                         <div class="vertical-line" style="height: 8.35em;width:1em;"></div>
                     </div>
                 </td>
@@ -214,4 +221,8 @@
         Resistência:
         <div id="resist-tot"></div>
     </div>
+    <div class="valores bg-secondary ">
+        Capacitância: <span id="capacitancia"></span>
+    </div>
+
 </html>

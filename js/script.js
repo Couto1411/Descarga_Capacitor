@@ -4,6 +4,7 @@ function hide() {
     document.getElementById("resistor-table3").style.display = "none";
     document.getElementById("resistor-table4").style.display = "none";
     document.getElementById("regulador-tensao").style.display = "none";
+    document.getElementById("form-capacitor").style.display = "none";
 }
 function brand1() {
     document.getElementById("resistor-table1").style.display = "inline";
@@ -11,6 +12,7 @@ function brand1() {
     document.getElementById("resistor-table3").style.display = "none";
     document.getElementById("resistor-table4").style.display = "none";
     document.getElementById("regulador-tensao").style.display = "none";
+    document.getElementById("form-capacitor").style.display = "none";
 }
 function brand2() {
     document.getElementById("resistor-table1").style.display = "none";
@@ -18,6 +20,7 @@ function brand2() {
     document.getElementById("resistor-table3").style.display = "none";
     document.getElementById("resistor-table4").style.display = "none";
     document.getElementById("regulador-tensao").style.display = "none";
+    document.getElementById("form-capacitor").style.display = "none";
 }
 function brand3() {
     document.getElementById("resistor-table1").style.display = "none";
@@ -25,6 +28,7 @@ function brand3() {
     document.getElementById("resistor-table3").style.display = "inline";
     document.getElementById("resistor-table4").style.display = "none";
     document.getElementById("regulador-tensao").style.display = "none";
+    document.getElementById("form-capacitor").style.display = "none";
 }
 function brand5() {
     document.getElementById("resistor-table1").style.display = "none";
@@ -32,6 +36,7 @@ function brand5() {
     document.getElementById("resistor-table3").style.display = "none";
     document.getElementById("resistor-table4").style.display = "inline";
     document.getElementById("regulador-tensao").style.display = "none";
+    document.getElementById("form-capacitor").style.display = "none";
 }
 function pilha() {
     document.getElementById("resistor-table1").style.display = "none";
@@ -39,6 +44,15 @@ function pilha() {
     document.getElementById("resistor-table3").style.display = "none";
     document.getElementById("resistor-table4").style.display = "none";
     document.getElementById("regulador-tensao").style.display = "inline";
+    document.getElementById("form-capacitor").style.display = "none";
+}
+function cliqueCapacitor() {
+    document.getElementById("resistor-table1").style.display = "none";
+    document.getElementById("resistor-table2").style.display = "none";
+    document.getElementById("resistor-table3").style.display = "none";
+    document.getElementById("resistor-table4").style.display = "none";
+    document.getElementById("regulador-tensao").style.display = "none";
+    document.getElementById("form-capacitor").style.display = "inline";
 }
 function faixa1P() { document.getElementById("brand1").style.backgroundColor = "black"; document.getElementById("brand1").style.borderColor = "black"; resistTot(); }
 function faixa1M() { document.getElementById("brand1").style.backgroundColor = "brown"; document.getElementById("brand1").style.borderColor = "brown"; resistTot(); }
@@ -234,5 +248,12 @@ function resistTot() {
 function tensao() {
     var slider = document.getElementById("myRange");
     var output = document.getElementById("demo");
-    output.innerHTML = slider.value+" V";
+
+    output.innerHTML = slider.value;
+}
+
+function capacitor() {
+    let valor = document.getElementById('input-capacitor')
+
+    capacitancia.innerHTML = valor.value
 }
