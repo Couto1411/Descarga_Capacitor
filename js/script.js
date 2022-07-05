@@ -257,3 +257,16 @@ function capacitor() {
 
     capacitancia.innerHTML = valor.value
 }
+
+function select(){
+    if(document.getElementById("chave").style.borderRightColor=="transparent"){
+        document.getElementById("chave").style.borderRight="0.4em solid black";
+        document.getElementById("chave").style.borderBottom="0";
+        document.getElementById("chave").style.borderBottomColor="transparent"
+    }
+    else{
+        document.getElementById("chave").style.borderRight="0";
+        document.getElementById("chave").style.borderRightColor="transparent"
+        document.getElementById("chave").style.borderBottom="0.4em solid black";
+    }
+}

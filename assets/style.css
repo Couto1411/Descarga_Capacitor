@@ -34,8 +34,8 @@ html {
     border-bottom: 0.4em solid black;
 }
 
-.chave {
-    border-right: 0.4em solid black;
+#chave{
+    border-right: 0em solid transparent;
     border-bottom: 0.4em solid black;
     transform: rotate(45deg);
     width: 2em;
@@ -44,8 +44,7 @@ html {
     margin-bottom: 0.1em;
     margin-left: -0.2em;
 }
-
-.chave:hover {
+#chave:hover{
     cursor: pointer;
 }
 
@@ -150,57 +149,19 @@ table td {
     text-align: center;
 }
 
-.black {
-    background-color: black;
-}
-
-.black span {
-    color: white;
-}
-
-.brown {
-    background-color: brown;
-}
-
-.red {
-    background-color: red;
-}
-
-.orange {
-    background-color: orange;
-}
-
-.yellow {
-    background-color: yellow;
-}
-
-.green {
-    background-color: green;
-}
-
-.blue {
-    background-color: blue;
-}
-
-.violet {
-    background-color: violet;
-}
-
-.gray {
-    background-color: gray;
-}
-
-.white {
-    background-color: white;
-}
-
-.gold {
-    background-color: gold;
-}
-
-.silver {
-    background-color: silver;
-}
+.black{background-color:black;}
+.black span{color:white;}
+.brown{background-color: brown;}
+.red{background-color: red;}
+.orange{background-color: orange;}
+.yellow{background-color: yellow;}
+.green{background-color: green;}
+.blue{background-color: blue;}
+.violet{background-color: violet;}
+.gray{background-color: gray;}
+.white{background-color: white;}
+.gold{background-color: gold;}
+.silver{background-color: silver;}
 
 #resist-tot {
     display: inline;
