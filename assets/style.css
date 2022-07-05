@@ -1,26 +1,40 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-html{
+html {
     font-size: 32px;
     background-color: silver;
 }
 
-.fonte{margin: 0; padding: 0;}
-.fonteimg{width: 4em;}
-.fonte .vertical-line{height: 2em; width:2.16em;}
+.fonte {
+    margin: 0;
+    padding: 0;
+}
 
-.capacitor-circuit{margin-left: -0.9em;}
-.capacitor{
+.fonteimg {
+    width: 4em;
+}
+
+.fonte .vertical-line {
+    height: 2em;
+    width: 2.16em;
+}
+
+.capacitor-circuit {
+    margin-left: -0.9em;
+}
+
+.capacitor {
     margin-left: -0.2em;
     width: 2em;
     height: 1em;
     border-top: 0.4em solid black;
     border-bottom: 0.4em solid black;
 }
-.chave{
+
+.chave {
     border-right: 0.4em solid black;
     border-bottom: 0.4em solid black;
     transform: rotate(45deg);
@@ -30,66 +44,199 @@ html{
     margin-bottom: 0.1em;
     margin-left: -0.2em;
 }
-.chave:hover{
+
+.chave:hover {
     cursor: pointer;
 }
 
-.resistor-circuit{
+.resistor-circuit {
     margin-left: -2em;
 }
-.resistor-circuit .vertical-line{height: 2em; width:54%;}
-.resistor-circuit .resistor-top,.resistor-bottom{
-    background-color: rgb(229,216,194);
+
+.resistor-circuit .vertical-line {
+    height: 2em;
+    width: 54%;
+}
+
+.resistor-circuit .resistor-top,
+.resistor-bottom {
+    background-color: rgb(229, 216, 194);
     width: 3em;
     height: 1.5em;
     border-radius: 0.3em;
 }
-.resistor-circuit .resistor-body{
-    background-color: rgb(229,216,194);
+
+.resistor-circuit .resistor-body {
+    background-color: rgb(229, 216, 194);
     width: 1.5em;
 }
-.resistor-circuit .resistor-body>*{
+
+.resistor-circuit .resistor-body>* {
     margin: 0.25em 0;
     border: 0.01em solid black;
     height: 0.7em;
 }
-#brand1:hover{cursor: pointer;}
-#brand2:hover{cursor: pointer;}
-#brand3:hover{cursor: pointer;}
-#brand5:hover{cursor: pointer;}
 
-.vertical-line{border-right: 0.4em solid black;}
-.horizontal-line{
+#brand1:hover {
+    cursor: pointer;
+}
+
+#brand2:hover {
+    cursor: pointer;
+}
+
+#brand3:hover {
+    cursor: pointer;
+}
+
+#brand5:hover {
+    cursor: pointer;
+}
+
+.vertical-line {
+    border-right: 0.4em solid black;
+}
+
+.horizontal-line {
     border-top: 0.4em solid black;
     width: 9em;
 }
-td:nth-child(1) .horizontal-line{margin-left: 1.77em;}
-.tabela-resistores{display: inline; font-size: 0.7em;margin-top: 5em;}
+
+td:nth-child(1) .horizontal-line {
+    margin-left: 1.77em;
+}
+
+.tabela-resistores {
+    display: inline;
+    font-size: 0.7em;
+    margin-top: 5em;
+}
+
 table {
     display: inline;
     border-collapse: collapse;
 }
+
 table td {
-    padding: 0; 
+    padding: 0;
     margin: 0;
 }
-#resistor-table1 td{width:8em; border: 0.1em solid black; color: black;text-align: center;}
-#resistor-table2 td{width:8em; border: 0.1em solid black; color: black;text-align: center;}
-#resistor-table3 td{width:8em; border: 0.1em solid black; color: black;text-align: center;}
-#resistor-table4 td{width:8em; border: 0.1em solid black; color: black;text-align: center;}
 
-.black{background-color:black;}
-.black span{color:white;}
-.brown{background-color: brown;}
-.red{background-color: red;}
-.orange{background-color: orange;}
-.yellow{background-color: yellow;}
-.green{background-color: green;}
-.blue{background-color: blue;}
-.violet{background-color: violet;}
-.gray{background-color: gray;}
-.white{background-color: white;}
-.gold{background-color: gold;}
-.silver{background-color: silver;}
+#resistor-table1 td {
+    width: 8em;
+    border: 0.1em solid black;
+    color: black;
+    text-align: center;
+}
 
-#resist-tot{display: inline;}
+#resistor-table2 td {
+    width: 8em;
+    border: 0.1em solid black;
+    color: black;
+    text-align: center;
+}
+
+#resistor-table3 td {
+    width: 8em;
+    border: 0.1em solid black;
+    color: black;
+    text-align: center;
+}
+
+#resistor-table4 td {
+    width: 8em;
+    border: 0.1em solid black;
+    color: black;
+    text-align: center;
+}
+
+.black {
+    background-color: black;
+}
+
+.black span {
+    color: white;
+}
+
+.brown {
+    background-color: brown;
+}
+
+.red {
+    background-color: red;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.violet {
+    background-color: violet;
+}
+
+.gray {
+    background-color: gray;
+}
+
+.white {
+    background-color: white;
+}
+
+.gold {
+    background-color: gold;
+}
+
+.silver {
+    background-color: silver;
+}
+
+#resist-tot {
+    display: inline;
+}
+
+.slidecontainer {
+    margin-right: 110px;
+    margin-top: 110px;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;  
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: #0000ff;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
+}
