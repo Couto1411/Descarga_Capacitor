@@ -208,21 +208,23 @@
                 <tr>
                     <td class="gold" onclick="faixa5G()">5%</td>
                 </tr>
-                <tr>
-                    <td class="silver" onclick="faixa5S()">0.01%</td>
-                </tr>
+                <tr><td class="silver" onclick="faixa5S()">0.01%</td></tr>
             </table>
         </div>
     </div>
     <div class="valores bg-secondary ">
-        Tensão: <span id="demo"></span>
+        Tensão: <span id="tensao"></span>
     </div>
     <div class="valores bg-secondary ">
-        Resistência:
-        <div id="resist-tot"></div>
+        Resistência: <div id="resist-tot"></div>
     </div>
     <div class="valores bg-secondary ">
         Capacitância: <span id="capacitancia"></span>
     </div>
-
+    <div class="valores bg-secondary ">
+        Tensão no capacitor: <span id="tensao-capac"></span>
+    </div>
+    <div onclick="draw()">
+        <canvas id="canvas" width="1000" height="1080"></canvas>
+    </div>
 </html>
