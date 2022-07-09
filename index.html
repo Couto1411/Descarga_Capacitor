@@ -18,9 +18,9 @@
 <body onload="hide()">
 
     <div class="d-flex justify-content-center">
-        <div class="slidecontainer" id="regulador-tensao">
+        <div class="d-flex justify-content-start align-items-center" id="regulador-tensao">
             <p>Regulador de Tensão</p>
-            <input type="range" min="1" max="20" value="10" class="slider" step="0.25" id="myRange" oninput="tensao()"
+            <input type="range" min="1" max="20" value="0" class="slider" step="0.25" id="myRange" oninput="tensao()"
             style="width: 500px;">
         </div>
         <table class="circuits">
@@ -83,132 +83,132 @@
                 </td>
             </tr>
         </table>
-        <div class="tabela-resistores">
+        <div class="tabela-resistores d-flex align-items-center">
             <table id="resistor-table1">
                 <tr>
-                    <td class="black" onclick="faixa1P()"><span>0 Preto</span></td>
+                    <td class="black" onclick="faixaP(1)"><span>0 Preto</span></td>
                 </tr>
                 <tr>
-                    <td class="brown" onclick="faixa1M()">1 Marrom</td>
+                    <td class="brown" onclick="faixaM(1)">1 Marrom</td>
                 </tr>
                 <tr>
-                    <td class="red" onclick="faixa1Vm()">2 Vermelho</td>
+                    <td class="red" onclick="faixaVm(1)">2 Vermelho</td>
                 </tr>
                 <tr>
-                    <td class="orange" onclick="faixa1L()">3 Laranja</td>
+                    <td class="orange" onclick="faixaL(1)">3 Laranja</td>
                 </tr>
                 <tr>
-                    <td class="yellow" onclick="faixa1Am()">4 Amarelo</td>
+                    <td class="yellow" onclick="faixaAm(1)">4 Amarelo</td>
                 </tr>
                 <tr>
-                    <td class="green" onclick="faixa1Vd()">5 Verde</td>
+                    <td class="green" onclick="faixaVd(1)">5 Verde</td>
                 </tr>
                 <tr>
-                    <td class="blue" onclick="faixa1Az()">6 Azul</td>
+                    <td class="blue" onclick="faixaAz(1)">6 Azul</td>
                 </tr>
                 <tr>
-                    <td class="violet" onclick="faixa1Vi()">7 Violeta</td>
+                    <td class="violet" onclick="faixaVi(1)">7 Violeta</td>
                 </tr>
                 <tr>
-                    <td class="gray" onclick="faixa1C()">8 Cinza</td>
+                    <td class="gray" onclick="faixaC(1)">8 Cinza</td>
                 </tr>
                 <tr>
-                    <td class="white" onclick="faixa1B()">9 Branco</td>
+                    <td class="white" onclick="faixaB(1)">9 Branco</td>
                 </tr>
             </table>
             <table id="resistor-table2">
                 <tr>
-                    <td class="black" onclick="faixa2P()"><span>0 Preto</span></td>
+                    <td class="black" onclick="faixaP(2)"><span>0 Preto</span></td>
                 </tr>
                 <tr>
-                    <td class="brown" onclick="faixa2M()">1 Marrom</td>
+                    <td class="brown" onclick="faixaM(2)">1 Marrom</td>
                 </tr>
                 <tr>
-                    <td class="red" onclick="faixa2Vm()">2 Vermelho</td>
+                    <td class="red" onclick="faixaVm(2)">2 Vermelho</td>
                 </tr>
                 <tr>
-                    <td class="orange" onclick="faixa2L()">3 Laranja</td>
+                    <td class="orange" onclick="faixaL(2)">3 Laranja</td>
                 </tr>
                 <tr>
-                    <td class="yellow" onclick="faixa2Am()">4 Amarelo</td>
+                    <td class="yellow" onclick="faixaAm(2)">4 Amarelo</td>
                 </tr>
                 <tr>
-                    <td class="green" onclick="faixa2Vd()">5 Verde</td>
+                    <td class="green" onclick="faixaVd(2)">5 Verde</td>
                 </tr>
                 <tr>
-                    <td class="blue" onclick="faixa2Az()">6 Azul</td>
+                    <td class="blue" onclick="faixaAz(2)">6 Azul</td>
                 </tr>
                 <tr>
-                    <td class="violet" onclick="faixa2Vi()">7 Violeta</td>
+                    <td class="violet" onclick="faixaVi(2)">7 Violeta</td>
                 </tr>
                 <tr>
-                    <td class="gray" onclick="faixa2C()">8 Cinza</td>
+                    <td class="gray" onclick="faixaC(2)">8 Cinza</td>
                 </tr>
                 <tr>
-                    <td class="white" onclick="faixa2B()">9 Branco</td>
+                    <td class="white" onclick="faixaB(2)">9 Branco</td>
                 </tr>
             </table>
             <table id="resistor-table3">
                 <tr>
-                    <td class="black" onclick="faixa3P()"> <span>1 Ω</span></td>
+                    <td class="black" onclick="faixaP(3)"> <span>1 Ω</span></td>
                 </tr>
                 <tr>
-                    <td class="brown" onclick="faixa3M()">10 Ω</td>
+                    <td class="brown" onclick="faixaM(3)">10 Ω</td>
                 </tr>
                 <tr>
-                    <td class="red" onclick="faixa3Vm()">100 Ω</td>
+                    <td class="red" onclick="faixaVm(3)">100 Ω</td>
                 </tr>
                 <tr>
-                    <td class="orange" onclick="faixa3L()">1K Ω</td>
+                    <td class="orange" onclick="faixaL(3)">1K Ω</td>
                 </tr>
                 <tr>
-                    <td class="yellow" onclick="faixa3Am()">10K Ω</td>
+                    <td class="yellow" onclick="faixaAm(3)">10K Ω</td>
                 </tr>
                 <tr>
-                    <td class="green" onclick="faixa3Vd()">100K Ω</td>
+                    <td class="green" onclick="faixaVd(3)">100K Ω</td>
                 </tr>
                 <tr>
-                    <td class="blue" onclick="faixa3Az()">1M Ω</td>
+                    <td class="blue" onclick="faixaAz(3)">1M Ω</td>
                 </tr>
                 <tr>
-                    <td class="violet" onclick="faixa3Vi()">10M Ω</td>
+                    <td class="violet" onclick="faixaVi(3)">10M Ω</td>
                 </tr>
                 <tr>
-                    <td class="gray" onclick="faixa3C()">100M Ω</td>
+                    <td class="gray" onclick="faixaC(3)">100M Ω</td>
                 </tr>
                 <tr>
-                    <td class="white" onclick="faixa3B()">1G Ω</td>
+                    <td class="white" onclick="faixaB(3)">1G Ω</td>
                 </tr>
                 <tr>
-                    <td class="gold" onclick="faixa3G()">0.1 Ω</td>
+                    <td class="gold" onclick="faixaG(3)">0.1 Ω</td>
                 </tr>
                 <tr>
-                    <td class="silver" onclick="faixa3S()">0.01 Ω</td>
+                    <td class="silver" onclick="faixaS(3)">0.01 Ω</td>
                 </tr>
             </table>
             <table id="resistor-table4">
                 <tr>
-                    <td class="brown" onclick="faixa5M()">1%</td>
+                    <td class="brown" onclick="faixaM(5)">1%</td>
                 </tr>
                 <tr>
-                    <td class="red" onclick="faixa5Vm()">2%</td>
+                    <td class="red" onclick="faixaVm(5)">2%</td>
                 </tr>
                 <tr>
-                    <td class="green" onclick="faixa5Vd()">0.5%</td>
+                    <td class="green" onclick="faixaVd(5)">0.5%</td>
                 </tr>
                 <tr>
-                    <td class="blue" onclick="faixa5Az()">0.25%</td>
+                    <td class="blue" onclick="faixaAz(5)">0.25%</td>
                 </tr>
                 <tr>
-                    <td class="violet" onclick="faixa5Vi()">0.1%</td>
+                    <td class="violet" onclick="faixaVi(5)">0.1%</td>
                 </tr>
                 <tr>
-                    <td class="gray" onclick="faixa5C()">0.05%</td>
+                    <td class="gray" onclick="faixaC(5)">0.05%</td>
                 </tr>
                 <tr>
-                    <td class="gold" onclick="faixa5G()">5%</td>
+                    <td class="gold" onclick="faixaG(5)">5%</td>
                 </tr>
-                <tr><td class="silver" onclick="faixa5S()">0.01%</td></tr>
+                <tr><td class="silver" onclick="faixaS(5)">0.01%</td></tr>
             </table>
         </div>
     </div>
@@ -216,7 +216,7 @@
         Tensão: <span id="tensao"></span>
     </div>
     <div class="valores bg-secondary ">
-        Resistência: <div id="resist-tot"></div>
+        Resistência: <div id="resist-tot"></div><div id="append"></div><div id="percentage"></div>
     </div>
     <div class="valores bg-secondary ">
         Capacitância: <span id="capacitancia"></span>
