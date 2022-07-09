@@ -57,6 +57,12 @@ function cliqueCapacitor() {
     document.getElementById("form-capacitor").style.display = "inline";
 }
 
+function faixaP(brand) {
+    if (brand==1) brand="brand1";
+    else if(brand==2) brand="brand2";  
+    else if(brand==3) brand="brand3"; 
+    else if(brand==5) brand="brand5";
+    document.getElementById(brand).style.backgroundColor = "black"; document.getElementById(brand).style.borderColor = "black"; resistTot(); }
 function faixaM(brand) {
     if (brand==1) brand="brand1";
     else if(brand==2) brand="brand2";  
@@ -295,24 +301,27 @@ function tensao() {
 }
 
 function capacitor() {
-    let valor = document.getElementById('input-capacitor')
-
+    let valor = document.getElementById('input-capacitor');
     capacitancia.innerHTML = valor.value+ "μF";
 }
 
 function select(){
-    if(document.getElementById("chave").style.borderRightColor=="transparent"){
+    let tensao=parseFloat(document.getElementById("tensao").innerHTML);
+    let resistencia=parseFloat(document.getElementById("resist-tot").innerHTML);
+    let capacitancia=parseFloat(document.getElementById("capacitancia").innerHTML);
+    if(document.getElementById("chave").style.borderRightColor=="transparent" && tensao>0 && capacitancia>0 && resistencia>0){
+        hide();
         document.getElementById("chave").style.borderRight="0.4em solid black";
         document.getElementById("chave").style.borderBottom="0";
         document.getElementById("chave").style.borderBottomColor="transparent";
         setTimeout(tensaCapac,1000); 
-        segundo=0;
     }
     else{
         document.getElementById("chave").style.borderRight="0";
         document.getElementById("chave").style.borderRightColor="transparent";
         document.getElementById("chave").style.borderBottom="0.4em solid black";
         document.getElementById("tensao-capac").innerHTML=parseFloat(document.getElementById("tensao").innerHTML);
+        resetCanvas();
     }
 }
 
@@ -333,9 +342,66 @@ function tensaCapac(){
             default:
                 break;
         }
-        document.getElementById("tensao-capac").innerHTML=((parseFloat(document.getElementById("tensao").innerHTML))*((Math.exp(1))**(-1*(segundo/((parseFloat(document.getElementById("resist-tot").innerHTML)*(multiplier))*(parseFloat(document.getElementById("capacitancia").innerHTML)*(10**(-6))))))).toFixed(5));
+        let tensao=parseFloat(document.getElementById("tensao").innerHTML);
+        let resistencia=parseFloat(document.getElementById("resist-tot").innerHTML);
+        let capacitancia=parseFloat(document.getElementById("capacitancia").innerHTML);
+        document.getElementById("tensao-capac").innerHTML=((tensao)*((Math.exp(1))**(-1*(segundo/((resistencia*(multiplier))*(capacitancia*(10**(-6))))))).toFixed(5));
         segundo+=0.1;
         if(parseFloat(document.getElementById("tensao-capac").innerHTML)>0.00001)
             setTimeout(tensaCapac, 1000);
+        resetCanvas();
+        generateData();
     }
 }
+
+function generateData() {
+    var xValues = [];
+    var yValues = [];   
+    let multiplier=1;
+    let append = document.getElementById("append").innerHTML;
+    switch (append) {
+        case "K":
+            multiplier=1000
+            break;
+        case "M":
+            multiplier=1000000
+            break;
+        case "G":
+            multiplier=1000000000
+            break;
+        default:
+            break;
+    }
+    let tensao=parseFloat(document.getElementById("tensao").innerHTML);
+    let resistencia=parseFloat(document.getElementById("resist-tot").innerHTML);
+    let capacitancia=parseFloat(document.getElementById("capacitancia").innerHTML);
+    for (let x = 0; x <= segundo; x += 0.1) {
+        yValues.push(eval((tensao)*((Math.exp(1))**(-1*(x/((resistencia*(multiplier))*(capacitancia*(10**(-6))))))).toFixed(4)));
+        xValues.push(x.toFixed(1));
+    }
+    renderChart(yValues, xValues);
+}
+function renderChart(yValues, xValues) {
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+        animationEnabled: true,
+        type: "line",
+        data: {
+            labels: xValues,
+            datasets: [{
+                fill: false,
+                pointRadius: 2,
+                borderColor: "rgb(75, 192, 192)",
+                data: yValues
+            }]
+        },    
+        options: {
+            legend: {display: false}
+        }
+    });
+}
+
+function resetCanvas(){
+    $('#myChart').remove(); // this is my <canvas> element
+    $('#graph-container').append('<canvas id="myChart"></canvas>');
+  };
