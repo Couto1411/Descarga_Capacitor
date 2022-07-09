@@ -314,6 +314,12 @@ function select(){
         document.getElementById("chave").style.borderRight="0.4em solid black";
         document.getElementById("chave").style.borderBottom="0";
         document.getElementById("chave").style.borderBottomColor="transparent";
+        document.getElementById("pilha").onclick = null;
+        document.getElementById("capacitor").onclick = null;
+        document.getElementById("brand1").onclick = null;
+        document.getElementById("brand2").onclick = null;
+        document.getElementById("brand3").onclick = null;
+        document.getElementById("brand5").onclick = null;
         setTimeout(tensaCapac,1000); 
     }
     else{
@@ -322,7 +328,14 @@ function select(){
         document.getElementById("chave").style.borderBottom="0.4em solid black";
         document.getElementById("tensao-capac").innerHTML=parseFloat(document.getElementById("tensao").innerHTML);
         resetCanvas();
-    }
+        document.getElementById("pilha").onclick = function() {pilha();}
+        document.getElementById("capacitor").onclick = function() {cliqueCapacitor();}
+        document.getElementById("brand1").onclick = function() {brand1();}
+        document.getElementById("brand2").onclick = function() {brand2();}
+        document.getElementById("brand3").onclick = function() {brand3();}
+        document.getElementById("brand5").onclick = function() {brand5();}
+        segundo=0;
+    } 
 }
 
 function tensaCapac(){

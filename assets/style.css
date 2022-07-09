@@ -30,7 +30,7 @@ html {
     margin-left: -0.9em;
 }
 
-.capacitor {
+#capacitor {
     margin-left: -0.2em;
     width: 2em;
     height: 1em;
@@ -38,7 +38,7 @@ html {
     border-bottom: 0.4em solid black;
 }
 
-.capacitor:hover{
+#capacitor:hover{
     cursor: pointer;
 }
 
