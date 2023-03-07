@@ -404,12 +404,30 @@ function renderChart(yValues, xValues) {
             datasets: [{
                 fill: false,
                 pointRadius: 2,
-                borderColor: "rgb(75, 192, 192)",
+                borderColor: "rgb(220,53,69)",
                 data: yValues
             }]
-        },    
+        },
         options: {
-            legend: {display: false}
+            legend: {display: false},
+            title: {
+                display: true,
+                text: 'Tensão no capacitor'
+            },
+            scales: {
+              yAxes: [{
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Tensão (V)'
+                }
+              }],
+              xAxes: [{
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Tempo (s)'
+                }
+              }]
+            } 
         }
     });
 }

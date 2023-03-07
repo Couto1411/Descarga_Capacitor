@@ -5,7 +5,20 @@
 
 html {
     font-size: 25px;
-    background-color: silver;
+    background-color: white;
+    height: 22.4em;
+    width: 59.98em;
+}
+#corpo{
+    background-color: transparent;
+}
+
+footer{
+    margin-top: 5.2em;
+}
+
+.text{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .fonte {
@@ -30,6 +43,10 @@ html {
     margin-left: -0.9em;
 }
 
+
+#regulador-tensao{
+    margin-left: 0.5em;
+}
 #capacitor {
     margin-left: -0.2em;
     width: 2em;
@@ -179,7 +196,7 @@ table td {
     width: 100%;
     height: 15px;
     border-radius: 5px;
-    background: #d3d3d3;
+    background: -webkit-gradient(linear, left top, right top, from(#e0c0c0), to(#e84242)) no-repeat;
     outline: none;
     opacity: 0.7;
     -webkit-transition: .2s;
@@ -192,7 +209,7 @@ table td {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: #0000ff;
+    background: #efb671;
     cursor: pointer;
 }
 
@@ -202,3 +219,7 @@ table td {
 
 #append{display: inline-block;}
 #percentage{display: inline-block;}
+
+table{
+    margin-top: 4em;
+}
